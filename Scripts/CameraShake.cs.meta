@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e926d54174409f46b3b27faca862046
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - impuls: {fileID: 2842923617124835729, guid: 9c094c649de8e8542885ad12161ba13d,
+      type: 3}
+  - flash: {fileID: 1498508531312206, guid: e1744c3570d8ce24b8606a0b632ae90f, type: 3}
+  executionOrder: 20
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
