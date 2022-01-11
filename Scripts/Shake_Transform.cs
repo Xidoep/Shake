@@ -5,8 +5,8 @@ using UnityEngine;
 public class Shake_Transform : MonoBehaviour
 {
     [SerializeField] AnimationCurve intensity;
-    [SerializeField] float time;
-    [SerializeField] float frequence;
+    [SerializeField] float time = 1;
+    [SerializeField] float frequence = 20;
     [SerializeField] bool position;
     [SerializeField] bool rotation;
 
