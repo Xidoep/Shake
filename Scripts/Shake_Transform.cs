@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Shake_Transform : MonoBehaviour
 {
+    [SerializeField] bool onEnable;
     [SerializeField] AnimationCurve intensity;
     [SerializeField] float time = 1;
     [SerializeField] float frequence = 20;
+    [Header("What shakes...")]
     [SerializeField] bool position;
     [SerializeField] bool rotation;
 
@@ -23,14 +25,29 @@ public class Shake_Transform : MonoBehaviour
 
     Vector3 tmpNoise;
 
-    [ContextMenu("Start")]
-    public void Start()
+    void OnEnable()
     {
-        if (!active) 
+        if (onEnable)
+        {
+            Shake();
+        }
+    }
+
+
+
+    public void Shake(float time)
+    {
+        this.time = time;
+        Shake();
+    }
+    public void Shake()
+    {
+        if (!active)
         {
             if (position) initialPosition = transform.localPosition;
             if (rotation) initialRotation = transform.localEulerAngles;
-        } 
+        }
+
         active = true;
         timer = 0;
     }
@@ -59,5 +76,11 @@ public class Shake_Transform : MonoBehaviour
         if (position) transform.localPosition = initialPosition;
         if (rotation) transform.localEulerAngles = initialRotation;
         active = false;
+    }
+
+    private void OnDisable()
+    {
+        active = false;
+        timer = 0;
     }
 }
