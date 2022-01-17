@@ -25,12 +25,8 @@ public class Shake_Transform : MonoBehaviour
 
     Vector3 tmpNoise;
 
-<<<<<<< Updated upstream
+
     void OnEnable()
-=======
-    [ContextMenu("Start")]
-    public void Shake()
->>>>>>> Stashed changes
     {
         if (onEnable)
         {
