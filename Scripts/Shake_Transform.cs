@@ -18,9 +18,13 @@ public class Shake_Transform : MonoBehaviour
     float timer;
 
 
+    public float Time { set => time = value; }
+    public AnimationCurve Intensity { set => intensity = value; }
+    public bool IntensityIsNull => intensity.keys.Length == 0;
 
     float Timer => (timer / time) * frequence;
     float Instensity => intensity.Evaluate(timer / time);
+    
     bool Ended => timer >= time;
 
     Vector3 tmpNoise;
@@ -58,7 +62,7 @@ public class Shake_Transform : MonoBehaviour
         if (!active)
             return;
 
-        timer += Time.deltaTime;
+        timer += UnityEngine.Time.deltaTime;
 
         tmpNoise = new Vector3((Mathf.PerlinNoise(Timer - 1, Timer + 1) - 0.5f) * Instensity, (Mathf.PerlinNoise(Timer - 2, -Timer + 2) - 0.5f) * Instensity, (Mathf.PerlinNoise(Timer - 3, Timer + 3) - 0.5f) * Instensity);
         
