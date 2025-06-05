@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 [CreateAssetMenu(menuName = "Xido Studio/Camera Shake/Impuls", fileName = "CameraImpuls")]
 public class Shake_Camera : ScriptableObject
@@ -21,8 +21,8 @@ public class Shake_Camera : ScriptableObject
             impulseSource = go.GetComponent<CinemachineImpulseSource>();
         }
 
-        impulseSource.m_ImpulseDefinition.m_RawSignal = noiseSettings;
-        impulseSource.m_ImpulseDefinition.m_AmplitudeGain = forca;
+        impulseSource.ImpulseDefinition.RawSignal = noiseSettings;
+        impulseSource.ImpulseDefinition.AmplitudeGain = forca;
 
         impulseSource.GenerateImpulseAt(posicio, Vector3.up);
 

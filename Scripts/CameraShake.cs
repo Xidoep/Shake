@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Cinemachine;
+using Unity.Cinemachine;
 
 public class CameraShake : MonoBehaviour {
 
@@ -43,6 +43,7 @@ public class CameraShake : MonoBehaviour {
             return;
 
     }
+
 
 
 
